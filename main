@@ -1,0 +1,76 @@
+import java.util.Scanner;
+
+public class main extends SorterFinder {
+
+	public static void main(String[] args) {
+
+			
+	Scanner reader = new Scanner(System.in);	
+		
+	SorterFinder s = new SorterFinder();	
+	
+	
+	s.ReadInfo();
+		
+	
+	boolean searchByName = true;
+	
+		System.out.println("What would you like to search by, name or number?"
+				+ " (Enter 'name' if you would like to search by name or 'number' if you would "
+				+ "like to search by number)");
+	
+	if (reader.nextLine() == "name" || reader.nextLine() == "Name") {
+		
+	 searchByName = true;
+	 
+	 reader.close();
+	}
+	
+	else if (reader.nextLine() == "number" || reader.nextLine() == "Number") {
+		
+	searchByName = false;
+	
+	reader.close();
+	
+	}
+	
+	else {
+		
+		System.out.println("Error. Invalid input.");
+		
+	reader.close();
+	}
+	
+	
+	if(searchByName == true) {
+	
+		
+	System.out.println("Which name would you like to search with: ");
+		
+	String name = reader.nextLine();
+	
+	System.out.println(s.FindNumber(name));
+			
+		
+	}
+			
+		
+		
+	else if (searchByName == false) {
+		
+	System.out.println("Which phone number would you like to search with: ");
+		
+	String phonenumber = reader.nextLine();
+	
+	System.out.println(s.FindName(phonenumber));
+		
+		System.out.println(phonenumber);
+		
+	}
+		
+		
+		
+		
+
+	}
+}
