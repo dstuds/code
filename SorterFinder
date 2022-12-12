@@ -1,0 +1,70 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class SorterFinder implements PhoneBook	{
+	
+	 Scanner reader = new Scanner(System.in);
+	
+	 ArrayList<String> names =  new ArrayList<String>();
+	 ArrayList<String> pnum = new ArrayList<String>();
+
+	
+public void ReadInfo() {
+
+
+System.out.println("Please enter in names. When you are done, type 'Done': ");
+
+if(reader.nextLine() == "Done" || reader.nextLine() == "done") {
+
+	reader.close();
+	
+}
+
+else {
+	
+	names.add(reader.nextLine());
+	
+}
+
+System.out.println("Please enter in phone numbers for the corresponding names. When you are done, type 'Done': ");
+
+if(reader.nextLine() == "Done" || reader.nextLine() == "done") {
+
+	reader.close();
+	
+}
+
+else {
+	
+	pnum.add(reader.nextLine());
+	
+}
+
+}
+	
+	
+	
+public String FindNumber(String name)  {
+	
+	int x = names.indexOf(name);
+	
+	System.out.println();
+	System.out.println(name);
+	return pnum.get(x);
+	
+}
+
+
+public String FindName(String phonenumber){
+
+int x = pnum.indexOf(phonenumber);
+	
+	System.out.println();
+	return names.get(x);
+}
+	
+	
+	
+	
+	
+}
